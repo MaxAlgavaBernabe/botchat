@@ -1,0 +1,22 @@
+<?php
+session_start();
+
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}
+
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi sitio web</title>
+</head>
+<body>
+    <h1>Bienvenido, <?php echo $_SESSION['username']; ?>!</h1>
+    <p>Contenido protegido.</p>
+    <a href="loginouth.php">Cerrar sesión</a>
+</body>
+</html>

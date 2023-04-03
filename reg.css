@@ -1,0 +1,212 @@
+body{
+
+  background-color: #628397;
+  top: 0;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: #dbe3e7;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 150%;
+}
+div.reg{
+  background-color: #6183BA;
+  position: relative; 
+  margin: auto;
+ 
+  padding: 20px;
+  top: 20%;
+  width: 60%;
+  height: 65%;
+  box-shadow: 1px 1px 5px #252f36;
+  text-align: center;
+}
+
+
+
+h2{
+  color: #dbe3e7;
+  text-align: center;
+  text-shadow: 1px 1px 5px #252f36;
+  font-size: 150%;
+  
+}
+
+div.nombre, div.apellido {
+  display: inline-block;
+  
+}
+
+div.nombre input, div.apellido input {
+  font-family: 'Overpass', sans-serif;
+  font-size: 110%;
+  color: #1b262c;
+  width: 100%;
+  height: 40px;
+  
+
+  box-sizing: border-box;
+
+  border: none;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+div.nacimiento input{
+  font-family: 'Overpass', sans-serif;
+  font-size: 110%;
+
+  
+  width: 100%;
+  height: 40px;
+  
+  margin-bottom: 30px;
+  padding: 5px 5px 5px 10px;
+  
+  box-sizing: border-box;
+  
+  border: none;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  
+}
+h5{
+  
+  position: relative;
+  margin: 0;
+  padding: 2px;
+  margin-bottom: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(235, 225, 225);
+  font-size: 90%;
+}
+div.genero select{
+  font-family: 'Overpass', sans-serif;
+  font-size: 110%;
+  color: #1b262c;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 40px;
+  
+  margin-bottom: 30px;
+  padding: 5px 5px 5px 10px;
+  
+  box-sizing: border-box;
+  
+  border: none;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  
+}
+div.nacionalidad select{
+  font-family: 'Overpass', sans-serif;
+  font-size: 110%;
+  color: #1b262c;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 40px;
+  
+  margin-bottom: 30px;
+  padding: 5px 5px 5px 10px;
+  
+  box-sizing: border-box;
+  
+  border: none;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  
+}
+
+div.correo input{
+  font-family: 'Overpass', sans-serif;
+  font-size: 110%;
+  color: #1b262c;
+  
+  display: block;
+  width: 47%;
+  height: 40px;
+  float: left;
+  margin-bottom: 30px;
+  padding: 5px 5px 5px 10px;
+  
+  box-sizing: border-box;
+  
+  border: none;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  
+}
+div.password input{
+  font-family: 'Overpass', sans-serif;
+  font-size: 110%;
+  color: #1b262c;
+  
+  display: block;
+  width: 50%;
+  height: 40px;
+  float: right;
+  margin-bottom: 30px;
+  padding: 5px 5px 5px 10px;
+  
+  box-sizing: border-box;
+  
+  border: none;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  
+}
+button{
+  font-family: 'Overpass', sans-serif;
+  font-size: 110%;
+  color:#1b262c;
+  width: 100%;
+  height: 60px;
+  border: none;
+  
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  
+  background-color: #bbe1fa;
+  
+  margin-top: 10px;
+}
+button:hover {
+  background-color: #1270af;
+  color:#bbe1fa;
+}
+
+
+input::placeholder {
+  font-family: 'Overpass', sans-serif;
+  color: #E4E4E4;
+}
+div.volver{
+position: relative;
+font-size: 200%;
+text-decoration: none;
+padding: 0;
+margin: auto;
+top: 25%;
+text-align: center;
+
+}
+a{
+  color: #dbe3e7;
+  text-decoration: none;
+  
+}
+a:hover{
+  color: #414d53;
+}
+
+
+
+
