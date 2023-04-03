@@ -11,12 +11,33 @@ if (!isset($_SESSION['user_id'])) {
 ?>
 <!DOCTYPE html>
 <html>
+    <title>Chat Bot</title>
 <head>
-    <title>Mi sitio web</title>
+    <link rel="stylesheet" href="chat.css">
 </head>
 <body>
-    <h1>Bienvenido, <?php echo $_SESSION['username']; ?>!</h1>
-    <p>Contenido protegido.</p>
-    <a href="loginouth.php">Cerrar sesión</a>
+    <div class="fontBar">
+        <h1>ChatBot</h1>
+    </div><div class="nave">
+        <ul class="list">
+            <li><a class="liNav" href="index.html">Inicio</a></li>
+            <li><a class="liNav" href="loginouth.php">Cerrar Sesion</a></li>
+            <li><a class="liNav" href="">Informacion</a></li>
+        </ul>
+        <button class="newChat" onclick="window.location.href='login.html'" >+ New Chat</button>
+    </div>
+    <div class="chat-container">
+        <div class="chat-history"></div>
+        <div class="chat-input">
+          <input type="text" placeholder="Escribe un mensaje...">
+          <button>Enviar</button>
+        </div>
+      </div>
+      <script src="script.js"></script>
+    
 </body>
+
+<footer>
+
+</footer>
 </html>
