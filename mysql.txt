@@ -1,15 +1,15 @@
 CREATE TABLE paciente (
     nombre VARCHAR(50) NOT NULL,
-    genero VARCHAR(1),
-    region VARCHAR(2),
-    fecha_nacimiento DATE,
+    genero VARCHAR(1) NOT NULL,
+    region VARCHAR(2) NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
     edad INT GENERATED ALWAYS AS (DATEDIFF(CURRENT_DATE, fecha_nacimiento)/365) VIRTUAL,
     PRIMARY KEY (nombre)
 );
 
-CREATE TABLE usuario(
-	correo VARCHAR(50),
-    contrasena VARCHAR(50),
-    nombre VARCHAR(50),
-     FOREIGN KEY (nombre) REFERENCES paciente(nombre)
+CREATE TABLE usuario (
+    correo VARCHAR(50) NOT NULL,
+    contrasena VARCHAR(50) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    FOREIGN KEY (nombre) REFERENCES paciente(nombre)
 );

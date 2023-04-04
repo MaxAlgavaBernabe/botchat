@@ -8,16 +8,19 @@ $nombre = $_POST["nombre"] . " " . $_POST["apellido"];
 $genero=$_POST["genero"];
 $region=$_POST["nacionalidad"];
 $nacimiento=$_POST["nacimiento"];
-$user=$_POST['user'];
+$correo=$_POST['correo'];
 $password=$_POST['password'];
 
 $sql = "INSERT INTO paciente (nombre, genero, region, fecha_nacimiento) VALUES ('$nombre', '$genero', '$region', '$nacimiento')";
 $resultado = mysqli_query($conn, $sql);
 
-$sql = "INSERT INTO usuario (correo, contrasena, nombre) VALUES ('$user', '$password', '$nombre')";
+
+$sql = "INSERT INTO usuario (correo, contrasena, nombre) VALUES ('$correo', '$password', '$nombre')";
 $resultado = mysqli_query($conn, $sql);
 
-$sql1 = "SELECT * FROM `usuario` WHERE correo = '$user' AND contrasena ='$password'";
+
+
+$sql1 = "SELECT * FROM `usuario` WHERE correo = '$correo' AND contrasena ='$password'";
 $result = mysqli_query($conn, $sql1);
 
 if (mysqli_num_rows($result) == 1) {

@@ -1,10 +1,10 @@
 <?php
 include 'conexion.php';
 $conn = mysqli_connect($host, $user, $pass, $db);
-$user=$_POST['user'];
+$correo=$_POST['user'];
 $password=$_POST['password'];
 
-$sql = "SELECT * FROM `usuario` WHERE correo = '$user' AND contrasena ='$password'";
+$sql = "SELECT * FROM `usuario` WHERE correo = '$correo' AND contrasena ='$password'";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) == 1) {
     // Iniciar sesión y redirigir al usuario a la página de inicio

@@ -129,19 +129,25 @@
   
   .chat-history {
     height: 300px;
-    padding: 10px;
+    padding: 0px;
     overflow-y: scroll;
+ 
   }
   
   .chat-input {
-    display: flex;
+    position: relative;
+    top: 500px;
     align-items: center;
     padding: 10px;
+    
   }
   
   .chat-input input {
-    flex: 1;
-    padding: 5px;
+
+    position: relative;
+   
+    width: 90%;
+    padding: 20px;
     border-radius: 5px;
     border: none;
     margin-right: 10px;
@@ -152,6 +158,6 @@
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 20px 20px;
     cursor: pointer;
   }
