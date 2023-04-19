@@ -1,3 +1,4 @@
+
 CREATE TABLE paciente (
     nombre VARCHAR(50) NOT NULL,
     genero VARCHAR(1) NOT NULL,
@@ -7,9 +8,156 @@ CREATE TABLE paciente (
     PRIMARY KEY (nombre)
 );
 
+
+
+CREATE TABLE amigo (
+  Nombre VARCHAR(50) PRIMARY KEY,
+  relacion VARCHAR(20),
+  nombre_paciente VARCHAR(50),
+  FOREIGN KEY (nombre_paciente) REFERENCES paciente(nombre)
+);
+
+CREATE TABLE habito (
+  horas_dormidas INT,
+  actividad_fisica BOOLEAN,
+  consumo_sustancias BOOLEAN,
+  alimentacion VARCHAR(50)
+);
+
+CREATE TABLE especialista (
+  nombre VARCHAR(50) PRIMARY KEY,
+  domicilio VARCHAR(50),
+  tipo_especialista VARCHAR(20),
+  correo VARCHAR(30)
+);
+
+CREATE TABLE sintoma (
+  descripcion VARCHAR(50) PRIMARY KEY,
+  tipo VARCHAR(10),
+  frecuencia INT
+);
+
+CREATE TABLE tratamiento (
+  descripcion VARCHAR(50) PRIMARY KEY,
+  tipo VARCHAR(10),
+  plazo_ini DATE,
+  plazo_fin DATE
+);
+
+
 CREATE TABLE usuario (
     correo VARCHAR(50) NOT NULL,
     contrasena VARCHAR(50) NOT NULL,
     nombre VARCHAR(50) NOT NULL,
     FOREIGN KEY (nombre) REFERENCES paciente(nombre)
 );
+
+
+
+INSERT INTO paciente (nombre, genero, region, fecha_nacimiento)
+VALUES 
+('Juan Perez', 'M', 'MX', '1995-05-12'),
+('Maria Garcia', 'F', 'MX', '1998-10-25'),
+('Pedro Rodriguez', 'M', 'US', '1987-03-19'),
+('Ana Hernandez', 'F', 'US', '1990-07-06'),
+('Luisa Martinez', 'F', 'CA', '2000-01-15'),
+('Carlos Gomez', 'M', 'CA', '1992-12-02'),
+('Sofia Fernandez', 'F', 'ES', '1994-06-29'),
+('Miguel Torres', 'M', 'ES', '1985-11-08'),
+('Elena Rodriguez', 'F', 'MX', '1999-09-18'),
+('Raul Sanchez', 'M', 'MX', '1989-02-21'),
+('Laura Gonzalez', 'F', 'US', '1997-12-14'),
+('Josefina Ramirez', 'F', 'US', '1991-04-30'),
+('Manuel Castro', 'M', 'CA', '1993-08-03'),
+('Silvia Garcia', 'F', 'CA', '1996-05-27'),
+('Pablo Torres', 'M', 'ES', '1988-09-10');
+
+
+INSERT INTO amigo (Nombre, relacion, nombre_paciente)
+VALUES
+('Carlos Perez', 'Amigo', 'Juan Perez'),
+('Luis Ramirez', 'Amigo', 'Juan Perez'),
+('Jorge Martinez', 'Familiar', 'Maria Garcia'),
+('Maria Martinez', 'Familiar', 'Maria Garcia'),
+('Ricardo Gonzalez', 'Amigo', 'Pedro Rodriguez'),
+('Laura Rodriguez', 'Familiar', 'Pedro Rodriguez'),
+('Juan Garcia', 'Amigo', 'Ana Hernandez'),
+('Marta Hernandez', 'Familiar', 'Ana Hernandez'),
+('Mariana Rodriguez', 'Amigo', 'Luisa Martinez'),
+('Pedro Martinez', 'Amigo', 'Luisa Martinez'),
+('Sofia Lopez', 'Familiar', 'Carlos Gomez'),
+('Sara Gomez', 'Familiar', 'Carlos Gomez'),
+('Daniel Fernandez', 'Amigo', 'Sofia Fernandez'),
+('Luisa Fernandez', 'Familiar', 'Sofia Fernandez'),
+('Cristina Torres', 'Amigo', 'Miguel Torres');
+
+
+
+
+INSERT INTO habito (horas_dormidas, actividad_fisica, consumo_sustancias, alimentacion) 
+VALUES 
+  (8, true, false, 'Dieta equilibrada'),
+  (6, true, true, 'Comida rápida'),
+  (7, false, false, 'Comida casera'),
+  (9, true, false, 'Dieta vegetariana'),
+  (5, false, true, 'Comida chatarra'),
+  (7, true, false, 'Comida saludable'),
+  (8, true, false, 'Dieta balanceada'),
+  (6, false, true, 'Comida rápida'),
+  (7, true, false, 'Dieta balanceada'),
+  (7, true, false, 'Comida rápida'),
+  (8, true, false, 'Dieta balanceada'),
+  (7, true, false, 'Dieta balanceada'),
+  (6, true, true, 'Dieta balanceada'),
+  (8, true, false, 'Dieta balanceada'),
+  (7, true, false, 'Dieta balanceada');
+
+
+INSERT INTO especialista (nombre, domicilio, tipo_especialista, correo)
+VALUES
+('Dr. Pérez', 'Av. Reforma 123', 'Psiquiatra', 'perez@gmail.com'),
+('Dra. Gómez', 'Calle Juárez 456', 'Psicóloga', 'gomez@gmail.com'),
+('Dr. López', 'Blvd. Colosio 789', 'Psiquiatra', 'lopez@gmail.com'),
+('Dra. Rodríguez', 'Calle Victoria 234', 'Psicóloga', 'rodriguez@gmail.com'),
+('Dr. García', 'Av. Insurgentes 567', 'Psiquiatra', 'garcia@gmail.com'),
+('Dra. Hernández', 'Calle Morelos 890', 'Psicóloga', 'hernandez@gmail.com'),
+('Dr. Sánchez', 'Blvd. Hidalgo 1234', 'Psiquiatra', 'sanchez@gmail.com'),
+('Dra. Castro', 'Calle Guerrero 5678', 'Psicóloga', 'castro@gmail.com'),
+('Dr. Ramírez', 'Av. Constitución 901', 'Psiquiatra', 'ramirez@gmail.com'),
+('Dra. Torres', 'Calle Reforma 2345', 'Psicóloga', 'torres@gmail.com');
+
+INSERT INTO sintoma (descripcion, tipo, frecuencia)
+VALUES 
+  ('Palpitaciones', 'Físico', 3),
+  ('Temblores', 'Físico', 2),
+  ('Sudoración excesiva', 'Físico', 4),
+  ('Mareos', 'Físico', 2),
+  ('Dificultad para respirar', 'Físico', 3),
+  ('Tensión muscular', 'Físico', 4),
+  ('Insomnio', 'Emocional', 3),
+  ('Preocupación excesiva', 'Emocional', 5),
+  ('Irritabilidad', 'Emocional', 4),
+  ('Dificultad para concentrarse', 'Emocional', 2),
+  ('Pensamientos negativos recurrentes', 'Emocional', 5),
+  ('Inseguridad', 'Emocional', 4),
+  ('Miedo a ser juzgado', 'Emocional', 5),
+  ('Evitación social', 'Conductual', 4),
+  ('Ritualización de conductas', 'Conductual', 3);
+
+INSERT INTO tratamiento (descripcion, tipo, plazo_ini, plazo_fin)
+VALUES
+("Terapia Cognitivo Conductual", "Psicoterapia", "2022-01-01", "2022-06-30"),
+("Terapia de Exposición", "Psicoterapia", "2022-03-15", "2022-09-15"),
+("Medicación Antidepresiva", "Farmacoterapia", "2022-02-01", "2022-12-31"),
+("Terapia de Aceptación y Compromiso", "Psicoterapia", "2022-04-01", "2022-10-01"),
+("Terapia de Grupo", "Psicoterapia", "2022-05-01", "2022-08-31"),
+("Terapia Online", "Psicoterapia", "2022-06-01", "2022-11-30"),
+("Entrenamiento en Habilidades Sociales", "Terapia Psicológica", "2022-03-01", "2022-07-31"),
+("Terapia Familiar", "Psicoterapia", "2022-02-15", "2022-09-15"),
+("Mindfulness", "Práctica de Meditación", "2022-03-01", "2022-08-31"),
+("Terapia de Respiración", "Terapia Física", "2022-04-15", "2022-10-15"),
+("Dieta Saludable", "Terapia Nutricional", "2022-01-01", "2022-12-31"),
+("Terapia de Relajación Muscular", "Terapia Física", "2022-02-01", "2022-07-31"),
+("Terapia Ocupacional", "Terapia de Rehabilitación", "2022-05-01", "2022-11-30"),
+("Terapia de Arte", "Terapia Creativa", "2022-03-15", "2022-09-15"),
+("Terapia de Masaje", "Terapia Física", "2022-04-01", "2022-10-01");

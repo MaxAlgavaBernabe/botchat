@@ -27,12 +27,16 @@ if (!isset($_SESSION['user_id'])) {
         <button class="newChat" onclick="window.location.href='login.html'" >+ New Chat</button>
     </div>
     <div class="chat-container">
+        <a href="chatbot.php">llamar php</a>
         <div class="chat-history"></div>
         <div class="chat-input">
+            <form action="chatbot.php">
           <input type="text" placeholder="Escribe un mensaje...">
-          <button>Enviar</button>
+          <button >Enviar</button>
+        </form>
         </div>
       </div>
+      
       <script src="script.js"></script>
     
 </body>
