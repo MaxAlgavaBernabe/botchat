@@ -30,12 +30,15 @@ CREATE TABLE especialista (
   tipo_especialista VARCHAR(20),
   correo VARCHAR(30)
 );
-
 CREATE TABLE sintoma (
-  descripcion VARCHAR(50) PRIMARY KEY,
+  id_sintoma INT AUTO_INCREMENT PRIMARY KEY,
+  nombre_paciente VARCHAR(50),
+  descripcion VARCHAR(50),
   tipo VARCHAR(10),
-  frecuencia INT
+  frecuencia INT,
+  FOREIGN KEY (nombre_paciente) REFERENCES paciente(nombre)
 );
+
 
 CREATE TABLE tratamiento (
   descripcion VARCHAR(50) PRIMARY KEY,
@@ -126,23 +129,24 @@ VALUES
 ('Dr. Ramírez', 'Av. Constitución 901', 'Psiquiatra', 'ramirez@gmail.com'),
 ('Dra. Torres', 'Calle Reforma 2345', 'Psicóloga', 'torres@gmail.com');
 
-INSERT INTO sintoma (descripcion, tipo, frecuencia)
-VALUES 
-  ('Palpitaciones', 'Físico', 3),
-  ('Temblores', 'Físico', 2),
-  ('Sudoración excesiva', 'Físico', 4),
-  ('Mareos', 'Físico', 2),
-  ('Dificultad para respirar', 'Físico', 3),
-  ('Tensión muscular', 'Físico', 4),
-  ('Insomnio', 'Emocional', 3),
-  ('Preocupación excesiva', 'Emocional', 5),
-  ('Irritabilidad', 'Emocional', 4),
-  ('Dificultad para concentrarse', 'Emocional', 2),
-  ('Pensamientos negativos recurrentes', 'Emocional', 5),
-  ('Inseguridad', 'Emocional', 4),
-  ('Miedo a ser juzgado', 'Emocional', 5),
-  ('Evitación social', 'Conductual', 4),
-  ('Ritualización de conductas', 'Conductual', 3);
+INSERT INTO sintoma (nombre_paciente, descripcion, tipo, frecuencia)
+VALUES
+('Juan Perez', 'Dolor de cabeza', 'Físico', 2),
+('Juan Perez', 'Fatiga', 'Físico', 3),
+('Maria Garcia', 'Ansiedad', 'Mental', 1),
+('Pedro Rodriguez', 'Dolor de espalda', 'Físico', 2),
+('Ana Hernandez', 'Insomnio', 'Mental', 2),
+('Luisa Martinez', 'Dolor de cuello', 'Físico', 1),
+('Carlos Gomez', 'Dolor de estómago', 'Físico', 3),
+('Sofia Fernandez', 'Depresión', 'Mental', 1),
+('Miguel Torres', 'Mareo', 'Físico', 1),
+('Elena Rodriguez', 'Náuseas', 'Físico', 2),
+('Raul Sanchez', 'Tos', 'Físico', 1),
+('Laura Gonzalez', 'Fiebre', 'Físico', 1),
+('Josefina Ramirez', 'Dolor de garganta', 'Físico', 1),
+('Manuel Castro', 'Dolor de oído', 'Físico', 2),
+('Silvia Garcia', 'Picazón en la piel', 'Físico', 1),
+('Pablo Torres', 'Fatiga', 'Físico', 2);
 
 INSERT INTO tratamiento (descripcion, tipo, plazo_ini, plazo_fin)
 VALUES

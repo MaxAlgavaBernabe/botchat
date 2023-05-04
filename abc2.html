@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+        <title>ABC 1</title>
+        <meta charset="UTF-8">
+<link rel="stylesheet" href="abc.css">
+<script>
+    function loadDoc() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("datos").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "selectEspecialista.php", true);
+      xhttp.send();
+    }
+  </script>
+</head>
+<body>
+    
+    <section class="abc">
+        <form class="regForm" method="POST" action="abcEspecialista.php">
+            
+             <div class="nombre">
+            <input id="nombre" name="nombre" type="text" placeholder="Nombre">
+            </div>
+            <div class="domicilio">
+                <input id="domicilio" name="domicilio" type="text" placeholder="domicilio">
+                </div>
+                <div class="tipo">
+                    <input id="tipo" name="tipo" type="text" placeholder="tipo esécialista">
+                    </div>
+                    <div class="correo">
+                        <input id="correo" name="correo" type="text" placeholder="correo">
+                        </div>
+
+        
+           
+                <button type="submit" name="accion" value="añadir">Guardar</button>
+                <button type="submit" name="accion" value="modificar">Actualizar</button>
+                <button type="submit" name="accion" value="borrar">Borrar</button>
+                
+                
+            
+
+        </form>
+        <button onclick="loadDoc()">Mostrar</button>
+    </section>
+    <section class="datos">
+        <h2>Datos del paciente</h2>
+    
+        
+        <div id="datos"></div>
+    </section>
+</body>
+</html>
